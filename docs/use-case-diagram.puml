@@ -1,0 +1,37 @@
+@startuml
+title Nexora - Use Case Diagram
+
+left to right direction
+
+actor "Competitive Programmer" as User
+actor "Codeforces API" as CF
+actor "Gemini AI" as AI
+
+rectangle "Nexora System" {
+
+    usecase "Register / Login" as UC1
+    usecase "Authenticate User" as UC2
+    usecase "Manage Profile" as UC3
+    usecase "Connect Coding Platforms" as UC4
+    usecase "View Upcoming Contests" as UC5
+    usecase "View Contest Details" as UC6
+    usecase "View Coding Profile" as UC7
+    usecase "Get AI Problem\nRecommendations" as UC8
+
+    UC1 ..> UC2 : <<include>>
+    UC8 ..> UC6 : <<extend>>\n[user requests recommendations]
+}
+
+User --> UC1
+User --> UC3
+User --> UC4
+User --> UC5
+User --> UC6
+User --> UC7
+User --> UC8
+
+CF --> UC7
+AI --> UC8
+
+@enduml
+is this much puml code enough
