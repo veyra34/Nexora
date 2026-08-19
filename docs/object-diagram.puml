@@ -1,0 +1,46 @@
+@startuml
+title Nexora - Object Diagram
+
+object "user1 : User" as user1 {
+    username = "Riyaziya"
+    email = "riyaziya@example.com"
+    password = "********"
+}
+
+object "account1 : Account" as account1 {
+    accountId = "ACC001"
+    accountInfo = "Competitive Programmer"
+}
+
+object "contest1 : Contest" as contest1 {
+    contestId = "CF001"
+    name = "Codeforces Round"
+    startTime = "20-08-2026 20:35"
+    details = "Competitive programming contest"
+}
+
+object "recommendation1 : Recommendation" as recommendation1 {
+    recommendationId = "REC001"
+    request = "Problems for contest preparation"
+    context = "Practice before upcoming contest"
+}
+
+object "problem1 : Problem" as problem1 {
+    problemId = "P001"
+    title = "Array and Prefix Sum"
+    difficulty = "Medium"
+}
+
+object "problem2 : Problem" as problem2 {
+    problemId = "P002"
+    title = "Graph Traversal"
+    difficulty = "Medium"
+}
+
+user1 -- account1 : has
+user1 -- contest1 : views
+user1 -- recommendation1 : requests
+recommendation1 -- problem1 : recommends
+recommendation1 -- problem2 : recommends
+
+@enduml

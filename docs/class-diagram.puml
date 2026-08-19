@@ -1,0 +1,51 @@
+@startuml
+title Nexora - Domain Class Diagram
+
+skinparam classAttributeIconSize 0
+
+class User {
+    - username: String
+    - email: String
+    - password: String
+    + register(): void
+    + login(): boolean
+    + requestRecommendations(): void
+}
+
+class Account {
+    - accountId: String
+    - accountInfo: String
+    + createAccount(): void
+    + authenticate(): boolean
+}
+
+class Contest {
+    - contestId: String
+    - name: String
+    - startTime: DateTime
+    - details: String
+    + getDetails(): String
+    + getUpcomingContests(): List
+}
+
+class Problem {
+    - problemId: String
+    - title: String
+    - difficulty: String
+    + getProblemDetails(): String
+}
+
+class Recommendation {
+    - recommendationId: String
+    - request: String
+    - context: String
+    + generateRecommendations(): List
+    + presentRecommendations(): List
+}
+
+User "1" -- "1" Account : has
+User "1" -- "0..*" Contest : views
+User "1" -- "0..*" Recommendation : requests
+Recommendation "1" -- "1..*" Problem : recommends
+
+@enduml
