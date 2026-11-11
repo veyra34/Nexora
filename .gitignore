@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+*.env
+*.env.local
+
+# Expo & React Native build outputs
+.expo/
+*/.expo/
+dist/
+*/dist/
+web-build/
+*/web-build/
+expo-env.d.ts
+*/expo-env.d.ts
+.metro-health-check*
+
+# C++ compiled executables & build directories
+*.exe
+*.out
+*.o
+*.obj
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+build/
+bin/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+export.log
+
+# Operating System & IDE
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
